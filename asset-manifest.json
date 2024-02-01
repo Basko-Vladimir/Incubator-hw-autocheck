@@ -1,19 +1,18 @@
 {
   "files": {
     "main.css": "/Incubator-hw-autocheck/static/css/main.8c891e5c.css",
-    "main.js": "/Incubator-hw-autocheck/static/js/main.c82deb87.js",
+    "main.js": "/Incubator-hw-autocheck/static/js/main.2a8e7e9f.js",
     "static/js/787.66cb4309.chunk.js": "/Incubator-hw-autocheck/static/js/787.66cb4309.chunk.js",
     "static/media/404.svg": "/Incubator-hw-autocheck/static/media/404.dae7af4892f2a3abe805a174178919f2.svg",
     "static/media/closeOutline.svg": "/Incubator-hw-autocheck/static/media/closeOutline.91a6693133923612a0702421ab3e9923.svg",
-    "static/media/editIcon.svg": "/Incubator-hw-autocheck/static/media/editIcon.11c8e1c42f9a4eae81897d68e091eb42.svg",
     "index.html": "/Incubator-hw-autocheck/index.html",
     "static/media/burger.svg": "/Incubator-hw-autocheck/static/media/burger.e4e6b98e4ee0b2dfcd76d02a9eed2e34.svg",
     "main.8c891e5c.css.map": "/Incubator-hw-autocheck/static/css/main.8c891e5c.css.map",
-    "main.c82deb87.js.map": "/Incubator-hw-autocheck/static/js/main.c82deb87.js.map",
+    "main.2a8e7e9f.js.map": "/Incubator-hw-autocheck/static/js/main.2a8e7e9f.js.map",
     "787.66cb4309.chunk.js.map": "/Incubator-hw-autocheck/static/js/787.66cb4309.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8c891e5c.css",
-    "static/js/main.c82deb87.js"
+    "static/js/main.2a8e7e9f.js"
   ]
 }
