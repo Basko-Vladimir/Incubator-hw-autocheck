@@ -41,7 +41,10 @@ function Clock() {
         setShow(false)
     }
 
-    const stringTime = `${helper(date.getHours())} : ${helper(date.getMinutes())} : ${helper(date.getSeconds())}` || <br/> // часы24:минуты:секунды (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01) // пишут
+    const timeFormatter = new Intl.DateTimeFormat("en", { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit'})
+    const stringTime = timeFormatter.format(date) || <br/> // часы24:минуты:секунды
+    // (01:02:03)/(23:02:03)/(24:00:00)/(00:00:01)
+    // пишут
     // студенты
     const stringDate = `${helper(date.getDate())}.${helper(date.getMonth() + 1)}.${helper(date.getFullYear())}` || <br/> // день.месяц.год
     // (01.02.2022) // пишут
@@ -51,7 +54,7 @@ function Clock() {
 
     // день недели на английском, месяц на английском (https://learn.javascript.ru/intl#intl-datetimeformat)
     const dayFormatter = new Intl.DateTimeFormat("en", { weekday: "long"})
-    const monthFormatter = new Intl.DateTimeFormat("en", { month: "long"})
+    const monthFormatter = new Intl.DateTimeFormat("en", { month: "long", })
     const stringDay = dayFormatter.format(date) || <br/> // пишут студенты
     const stringMonth = monthFormatter.format(date) || <br/> // пишут студенты
 
