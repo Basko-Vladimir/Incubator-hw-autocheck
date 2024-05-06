@@ -1,5 +1,5 @@
 import React from 'react'
-import HW9 from "../../hw09/HW9";
+//import HW9 from "../../hw09/HW9";
 
 function Junior() {
     return (
@@ -8,7 +8,7 @@ function Junior() {
             {/*<HW6 />*/}
             {/*<HW7 />*/}
             {/*<HW8 />*/}
-            <HW9 />
+            {/*<HW9 />*/}
         </div>
     )
 }
