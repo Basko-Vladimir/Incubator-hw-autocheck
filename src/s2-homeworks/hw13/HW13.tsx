@@ -68,9 +68,6 @@ const HW13 = () => {
                 }
 
             })
-          .finally(() => {
-              // setInfo('')
-          })
     }
 
     return (
