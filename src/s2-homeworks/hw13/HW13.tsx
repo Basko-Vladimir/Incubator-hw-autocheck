@@ -62,8 +62,8 @@ const HW13 = () => {
                     default: {
                         setCode('Код unknown!')
                         setImage(errorUnknown)
-                        setText(e.response.data.errorText)
-                        setInfo(e.response.data.info)
+                        setText(e.message)
+                        setInfo(e.message)
                     }
                 }
 
