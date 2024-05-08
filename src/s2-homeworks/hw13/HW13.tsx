@@ -36,7 +36,8 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                setText(res.data?.info)
+                setText(res.data?.errorText)
+                setInfo(res.data?.info)
                 // дописать
 
             })
@@ -47,25 +48,28 @@ const HW13 = () => {
                     case 500: {
                         setCode('Код 500!')
                         setImage(error500)
-                        setText(e.message)
+                        setText(e.response.data.errorText)
+                        setInfo(e.response.data.info)
                         break;
                     }
                     case 400: {
                         setCode('Код 400!')
                         setImage(error400)
-                        setText(e.message)
+                        setText(e.response.data.errorText)
+                        setInfo(e.response.data.info)
                         break;
                     }
                     default: {
                         setCode('Код unknown!')
                         setImage(errorUnknown)
-                        setText(e.message)
+                        setText(e.response.data.errorText)
+                        setInfo(e.response.data.info)
                     }
                 }
 
             })
           .finally(() => {
-              setInfo('')
+              // setInfo('')
           })
     }
 
