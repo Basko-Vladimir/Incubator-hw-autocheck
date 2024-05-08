@@ -36,7 +36,7 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                setText(res.data.errorText)
+                setText(res.data?.info)
                 // дописать
 
             })
@@ -47,19 +47,19 @@ const HW13 = () => {
                     case 500: {
                         setCode('Код 500!')
                         setImage(error500)
-                        setText(e.res.data.errorText)
+                        setText(e.message)
                         break;
                     }
                     case 400: {
                         setCode('Код 400!')
                         setImage(error400)
-                        setText(e.res.data.errorText)
+                        setText(e.message)
                         break;
                     }
                     default: {
                         setCode('Код unknown!')
                         setImage(errorUnknown)
-                        setText(e.res.data.errorText)
+                        setText(e.message)
                     }
                 }
 
