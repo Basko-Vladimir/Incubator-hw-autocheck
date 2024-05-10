@@ -35,6 +35,7 @@ const getTechs = (params: ParamsType) => {
         )
         .catch((e) => {
             alert(e.response?.data?.errorText || e.message)
+            throw new Error(e)
         })
 }
 
@@ -47,26 +48,37 @@ const HW15 = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const [techs, setTechs] = useState<TechType[]>([])
 
+
     const sendQuery = (params: any) => {
         setLoading(true)
         getTechs(params)
-            .then((res) => {
-                // делает студент
+          .then((res) => {
+              // делает студент
 
-                // сохранить пришедшие данные
-
-                //
-            })
+              // сохранить пришедшие данные
+              setTechs(res.data.techs)
+              setTotalCount(res.data.totalCount)
+              //
+          })
+          .catch((e) => {
+              console.log(e.response.message)
+          })
+          .finally(() => {
+              setLoading(false)
+          })
     }
 
     const onChangePagination = (newPage: number, newCount: number) => {
         // делает студент
 
         // setPage(
+        setPage(newPage);
         // setCount(
-
+        setCount(newCount)
         // sendQuery(
+        sendQuery({page: newPage, count: newCount})
         // setSearchParams(
+        setSearchParams({ ...searchParams, page: '' + newPage, count: '' + newCount })
 
         //
     }
@@ -75,11 +87,13 @@ const HW15 = () => {
         // делает студент
 
         // setSort(
+        setSort(newSort)
         // setPage(1) // при сортировке сбрасывать на 1 страницу
-
+        setPage(1)
         // sendQuery(
+        sendQuery({page: 1, count, sort: newSort})
         // setSearchParams(
-
+        setSearchParams({ ...searchParams, sort: newSort, page: '1'} as any)
         //
     }
 
@@ -89,6 +103,8 @@ const HW15 = () => {
         setPage(+params.page || 1)
         setCount(+params.count || 4)
     }, [])
+
+    console.log(techs)
 
     const mappedTechs = techs.map(t => (
         <div key={t.id} className={s.row}>
